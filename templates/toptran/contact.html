@@ -1,0 +1,293 @@
+{% extends 'toptran/base.html' %}
+
+{% load staticfiles %}
+
+
+
+
+
+{% block title %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">  
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <!--返回顶部-->
+   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Oy2UoovjKpo3LCVuZuhfXBkwxnptqvPw"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qV5WiabXFrwIbhAUAOiUMIBXflG7ahEj"></script>
+   
+
+{% endblock %}     
+
+{% block content %}
+	<div class="header">
+
+	<nav>
+        <ul>
+           <li><a href="{% url 'toptran:index' %}"><div><img src="{% static 'img/LOGO.png' %}"></div></a></li>
+           <li class="nav"><a href="{% url 'toptran:about' %}">关于我们</a></li>
+           <li class="nav"><a href="{% url 'toptran:product_list' %}">产品中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:case' %}">成功案例</a></li>
+           <li class="nav"><a href="{% url 'toptran:news' %}">新闻中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:knowledge' %}">行业知识</a></li>
+           <li class="cont"><a href="{% url 'toptran:contact' %}">联系我们</a></li>
+        </ul>
+  </nav>
+  <div class="banner"></div>
+</div>
+  
+<div class="n_main">
+    <div class="public_2">
+        
+<div class="nm_left">
+    <div class="bai">
+        <div class="left_tit">
+            <p class="nlp_1">联系我们</p>
+            <p class="nlp_2">CONTACT US</p>
+        </div>
+        <div class="left_list_1">
+            <ul class="nav_yi">
+                <li  class="cur"><a href="#">联系方式</a></li>
+        <li ><a href="#">在线咨询</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <p><img src="{% static 'img/left_bj.png' %}" /></p>
+</div>
+        <div class="nm_right">
+            <div class="mbx_nav">
+                <p>联系方式
+                  <span>您当前位置：
+                      <a href="{% url 'toptran:index' %}">
+                         <i class="fa fa-home heading-icon" aria-hidden="true"></i></a> >
+                        <a href="#">联系我们</a> >
+                        <span>联系方式</span>
+                    </span>
+                </p>
+            </div>
+            <div class="dc">
+                
+             
+                
+                
+              
+                <img class="weixin" style="border:6px solid #DEDEDE" src="{% static 'img/weixin.PNG' %}">
+                
+                <p class="gs_p1">销售及服务网点</p>
+                <div class="ditu">
+                  <p class="d_gs">拓诚机械股份有限公司</p>
+                    <p class="d_con">地址：台湾桃园县龟山乡333德明路同昌巷4号 </p>
+                    <p class="d_con">电话: 0574-86596663 </p>
+                    <p class="d_con">手机: 18968331230 </p> 
+                    <p class="d_con">传真: 0574-86596667 </p>
+                    <p class="d_con">邮箱: hurui@nbtoptran.com </p>
+                    <p class="d_con">联系人：胡经理 </p>
+                </div>
+
+
+
+
+
+
+                <div class="ditu">
+                  <p class="d_gs">宁波拓诚机械有限公司</p>
+                    <p class="d_con">地址：中国浙江省宁波市镇海经济开发区A2区中官路889号 </p>
+                    <p class="d_con">电话: 0574-86596663 </p>
+                    <p class="d_con">手机: 18968331230 </p> 
+                    <p class="d_con">传真: 0574-86596667 </p>
+                    <p class="d_con">邮箱: hurui@nbtoptran.com </p>
+                    <p class="d_con">联系人：胡经理 </p>
+                </div>
+               <div style="width:710px;height:300px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+               
+
+               <div class="ditu">
+                  <p class="d_gs">拓诚机械科技（淮安）有限公司</p>
+                    <p class="d_con">地址：中国江苏省淮安市经济开发区徐杨路78号 </p>
+                   <p class="d_con">电话: 0574-86596663 </p>
+                    <p class="d_con">手机: 18968331230 </p> 
+                    <p class="d_con">传真: 0574-86596667 </p>
+                    <p class="d_con">邮箱: hurui@nbtoptran.com </p>
+                    <p class="d_con">联系人：胡经理 </p>
+                </div>
+                <div style="width:710px;height:300px;border:#ccc solid 1px;font-size:12px" id="map1"></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(121.67974,29.948142),19);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"电话：18968331230   地址：中国浙江省宁波市镇海经济开发区A2区中官路889号",title:"宁波拓诚机械有限公司",imageOffset: {width:0,height:3},position:{lat:29.947915,lng:121.679268}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+      var labels = [
+      ];
+      for(var index = 0; index < labels.length; index++){
+        var opt = { position: new BMap.Point(labels[index].position.lng,labels[index].position.lat )};
+        var label = new BMap.Label(labels[index].content,opt);
+        map.addOverlay(label);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+
+
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map1"); 
+      map.centerAndZoom(new BMap.Point(119.174832,33.582881),18);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"",imageOffset: {width:0,height:3},position:{lat:29.947915,lng:121.679268}},
+        {content:"电话：18968331230   地址：中国江苏省淮安市经济开发区徐杨路78号",title:"拓诚机械科技（淮安）有限公司",imageOffset: {width:0,height:3},position:{lat:33.58328,lng:119.173933}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+      var labels = [
+      ];
+      for(var index = 0; index < labels.length; index++){
+        var opt = { position: new BMap.Point(labels[index].position.lng,labels[index].position.lat )};
+        var label = new BMap.Label(labels[index].content,opt);
+        map.addOverlay(label);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

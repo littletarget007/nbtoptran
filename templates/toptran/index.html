@@ -1,0 +1,436 @@
+{% extends 'toptran/base.html' %}
+{% load i18n %}
+{% load admin_urls %}
+{% load staticfiles %}
+{% load toptran_tags %}
+
+
+
+
+
+{% block title %}
+  <link rel="stylesheet" type="text/css" href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/htmleaf-demo.css' %}">
+  <link rel="stylesheet" href="{% static 'demo/css/style.css' %}">
+  <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'dist/css/glightbox.css' %}">
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <!--banner start-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/banner/normalize.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/banner/htmleaf-demo.css' %}">
+  <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/banner/main.css' %}">
+
+<!--banner end-->
+<!--3d轮播-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/3d/normalize.css' %}" />
+ 
+  <link rel="stylesheet" href="{% static 'css/3d/style.css' %}">
+  <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+<!--3d轮播-->
+<!--new-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/news/normalize.css' %}" /><!--CSS RESET-->
+  
+  <link rel="stylesheet" href="{% static 'css/news/style.css' %}">
+  <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+ <!--new-->
+ <!--返回顶部-->
+    
+
+<!--news-->
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block content %}
+
+	<nav>
+        <ul>
+           <li><a href="{% url 'toptran:index' %}"><div><img src="{% static 'img/LOGO.png' %}"></div></a></li>
+           <li class="nav"><a href="{% url 'toptran:about' %}">关于我们</a></li>
+           <li class="nav"><a href="{% url 'toptran:product_list' %}">产品中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:case' %}">成功案例</a></li>
+           <li class="nav"><a href="{% url 'toptran:news' %}">新闻中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:knowledge' %}">行业知识</a></li>
+           <li class="nav"><a href="{% url 'toptran:contact' %}">联系我们</a></li>
+        </ul>
+  </nav>
+
+  <!--banner start-->
+
+    
+    <div class="container">
+    <div class="trent-slider">
+      <div class="t-slide current-t-slide">
+        <img src="{% static 'img/home/banner1.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner2.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner3.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner4.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner5.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner6.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner7.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner8.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+      <div class="t-slide">
+        <img src="{% static 'img/home/banner9.jpg' %}" alt="拓诚送料机工厂首页" />
+      </div>
+
+
+      <div class="t-slider-controls">
+        <div class="arrow right-arrow">
+          <div class="arrow-container">
+            <div class="arrow-icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="arrow left-arrow">
+          <div class="arrow-container">
+            <div class="arrow-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="t-load-bar">
+          <div class="inner-load-bar"></div>
+        </div>
+        <div class="t-dots-container">
+          <div class="t-slide-dots-wrap">
+            <div class="t-slide-dots">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+  </div>
+  
+  <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+  <script>window.jQuery || document.write('<script src="{% static 'toptran/js/banner/jquery-1.11.0.min.js' %}"><\/script>')</script>
+  <script src="{% static 'js/banner/main.js' %}"></script>
+  <!--banner end-->
+
+
+  <!-- Images with description example -->
+  <section class="section pair">
+    <div class="wrap">
+      <h3 class="p-title"><i class="fa fa-address-card heading-icon" aria-hidden="true"></i>产品中心</h3>
+      <p>多年来公司经营的脚步稳定踏实，累积汇集优秀人才，锻炼出各项专业素养的精英，继续不断的研制符合市场广大需求的冲床自动化设备及卷料加工生产线，客户的需求就是最佳的研发动力，拓诚充分详尽地掌握客户的需求，以提供机台最完善的提升方案，对于越要求的客户，给予越佳的机台质量；以世界为市场，接受质量的考验。创造客户、员工、企业三赢的局面。 <strong><a href="{% url 'toptran:product_list' %}">了解更多>>> </a></strong></p>
+
+      <div class="clear"></div>
+
+      <ul class="box-container three-cols">
+        <li class="box">
+          <a href="{% static 'img/home/product1.jpg' %}" class="glightbox2" data-glightbox="title: 三机一体NC伺服料架矫直送料机TLN2; descPosition: right;">
+						<img src="{% static 'img/home/product1.jpg' %}" alt="拓诚送料机工厂产品中心">
+						<div class="glightbox-desc">
+							<p>在机械零件的选配上有着高标准的原则，对于组装流程及零配件，坚持要求符合原设计标准与原材料，绝不因为对成本的考虑而牺牲对产品质量的要求。</p>
+							<p>1、矫直滚轮及送料滚轮采用轴承钢(日本SUJ2同等级)经热处理、淬火处理、镀硬铬、研磨、HRC60度以上；<br> 2、轴承：采用日本制NSK 、KOYO、NTN等品牌；<br> 3、铜衬：采用自润轴承(OILESSMETAL)或铜衬； <br>4、齿轮：全部经淬火处理，另外所有链条及键槽定位采紧密手工精密配合组装，并有黄油润滑装置； <br>5、整平部调整：采用手轮加日制百分调整，可精密调整并轻易读出0.1mm的数值，整平后材料.</p>
+						</div>
+					</a>
+        </li>
+        <li class="box">
+          <a href="{% static 'img/home/product2.jpg'%}" class="glightbox2" data-glightbox="title: NC伺服滚轮送料机TRN系列: right;">
+						<img src="{% static 'img/home/product2.jpg' %}" alt="拓诚送料机工厂产品中心">
+						<div class="glightbox-desc">
+							<p>结合日本技术，全新设计 高性能精密机械结构 高精度，稳定性佳 提高生产力的最佳配备</p>
+							
+						</div>
+					</a>
+        </li>
+        <li class="box">
+          <a href="{% static 'img/home/product3.jpg'%}" class="glightbox2" data-glightbox="title: NC伺服滚轮送料机TRN系列: right;">
+            <img src="{% static 'img/home/product3.jpg' %}" alt="拓诚送料机工厂产品中心">
+            <div class="glightbox-desc">
+              <p>结合日本技术，全新设计 高性能精密机械结构 高精度，稳定性佳 提高生产力的最佳配备</p>
+              
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Videos example -->
+  <section class="section">
+    <div class="wrap">
+      <h3 class="p-title"><i class="fa fa-video-camera heading-icon" aria-hidden="true"></i>成功案例</h3>
+      <p>目前全球汽车二十强供应商，用拓诚品牌的有<strong>德国博世</strong>,<strong>加拿大麦格拉</strong>, <strong>阿尔卑斯</strong>,<strong>法国佛吉亚</strong>, <strong>美国江森</strong>,<strong>李尔</strong>,<strong>舍弗勒</strong>,<strong>博格华纳</strong>, <strong>伟世通</strong>！拓诚目前已经成功的打开了澳大利亚，美国，加拿大，巴西，土耳其，德国，法国，英国，日本等东南亚市场，是一家真正的全球化的公司。
+        <strong><a href="{% url 'toptran:case' %}">了解更多>>> </a></strong></p>
+
+      <div class="clear"></div>
+
+      <ul class="box-container three-cols">
+        <li class="box">
+          <a href="{% static 'img/home/case1.jpg' %}" class="glightbox3">
+						<img src="{% static 'img/home/case1.jpg' %}" alt="拓诚送料机工厂案例图">
+					</a>
+        </li>
+        <li class="box">
+          <a href="{% static 'img/home/case2.jpg' %}" class="glightbox3">
+						<img src="{% static 'img/home/case2.jpg' %}" alt="拓诚送料机工厂案例图">
+					</a>
+        </li>
+        <li class="box">
+          <a href="{% static 'img/home/case3.jpg' %}" class="glightbox3">
+						<img src="{% static 'img/home/case3.jpg' %}" alt="拓诚送料机工厂案例图">
+					</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+
+
+    
+    <section class="company">
+    <div class="wrap">
+      <h3 class="p-title"><i class="fa fa-home heading-icon" aria-hidden="true"></i>公司简介</h3>
+      <p>1996年在台湾成立，2002年在大陆宁波第一家公司投产，2014年在江苏淮安设第2家分公司，目前在二岸三地都有工厂，台湾桃园，浙江寜波，江苏淮安3家工厂。员工200多人，注册资金2000万美金，10多名机械设计师；专业生产三合一送料机以及各种冲压周边自动化设备！ <strong><a href="{% url 'toptran:about' %}">了解更多>>> </a></strong></p>
+
+      
+	</div>
+	<div class="carousel2" data-gap="20" data-bfc>
+
+
+       
+       <figure>
+        {% for index in index_list %}
+          <img src="{{ index.image.url }}" alt="拓诚送料机工厂展示">
+         
+          {% endfor %}
+          
+       </figure>
+        
+       <nav>
+        <button class="nav prev">Prev</button>
+        <button class="nav next">Next</button>
+       </nav>
+    </div>
+   
+  </section>
+  <!--公司简介结束-->
+
+
+
+  
+	
+	<script src="{% static 'dist/js/glightbox.min.js' %}"></script>
+	  <script src="{% static 'demo/js/site.js' %}"></script>
+	  <script>
+	    var lightbox = GLightbox();
+	    var lightboxDescription = GLightbox({
+	      selector: 'glightbox2'
+	    });
+	    var lightboxVideo = GLightbox({
+	      selector: 'glightbox3',
+	      jwplayer: {
+	        api: 'https://content.jwplatform.com/libraries/QzXs2BlW.js',
+	        licenseKey: 'imB2/QF0crMqHks7/tAxcTRRjnqA9ZwxWQ2N1A=='
+	      }
+	    });
+	    var lightboxInlineIframe = GLightbox({
+	      'selector': 'glightbox4'
+	    });
+	  </script>
+
+
+<section class="news">
+    <div class="wrap">
+      <h3 class="p-title"><i class="fa fa-book heading-icon" aria-hidden="true"></i>新闻中心</h3>
+    </div>
+    <br>
+    <br>
+<div class="wrapper">
+           <div class="container">
+
+               <div class="slideshow">
+
+                    <div class="slideshow-left">
+
+                        {% get_recent_news as recent_news_list %}
+                        {% for new in recent_news_list %}
+                        <div class="Lslide">
+                          
+
+                            <div class="Lslide-content">
+                                <h4 style="font-size: 90%"><srong>{{ new.title|truncatechars:15}}</srong></h4><br>
+                                <p style="font-size: 80%;">{{ new.body|truncatechars:152 }}</p>
+
+                                <div class="button">
+                                    <a href="{{ new.get_absolute_url }}">
+                                        <p style="text-decoration:none;">查看详情</p>
+                                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                           
+                        </div>
+                       {% empty %}
+                        暂无新闻！
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="slideshow-right">
+
+                        <div class="Rslide">
+                            <img src="{% static 'img/home/news1.jpg' %}" alt="拓诚送料机工厂新闻图片">
+                        </div>
+
+                        <div class="Rslide">
+                            <img src="{% static 'img/home/news2.jpg' %}" alt="拓诚送料机工厂新闻图片">
+                        </div>     
+                        <div class="Rslide">
+                            <img src="{% static 'img/home/news3.jpg' %}" alt="拓诚送料机工厂新闻图片">
+                        </div>                                              
+                    </div>    
+
+                    
+                    
+
+               </div>
+
+           </div>
+       </div>
+
+  
+
+
+
+  
+  </section>
+ 
+
+  <script type="text/javascript">
+    var Lslide      = document.querySelectorAll('.Lslide'),
+        Rslide      = document.querySelectorAll('.Rslide'),
+        control     = document.querySelectorAll('.oncontrol'),
+        slideHeight = document.querySelector('.wrapper').clientHeight,
+        color = ['#fdc97c', '#e5d3d0', '#71b3d6'],
+        index = 0;
+
+
+    function init() {
+        slideHeight = document.querySelector('.wrapper').clientHeight;
+        for (i = 0; i < Lslide.length; i++) {
+            Lslide[i].style.backgroundColor = color[i];
+            Lslide[i].style.top = -slideHeight * i + "px";
+            Rslide[i].style.top = slideHeight * i + "px";
+        }  
+    }
+    init()
+    window.addEventListener('resize', function(){
+        init()
+    });
+
+    function moveToTop() {
+
+        index++;
+        for (el = 0; el < Lslide.length; el++) {
+            Lslide[el].style.top = parseInt(Lslide[el].style.top) + slideHeight + "px";
+            Rslide[el].style.top = parseInt(Rslide[el].style.top) - slideHeight + "px";
+        }
+
+        if (index > Lslide.length-1) {
+            index = 0;
+            for (el = 0; el < Lslide.length; el++) {
+                Lslide[el].style.top = -slideHeight * el + "px";
+                Rslide[el].style.top = slideHeight * el + "px";
+            }
+        }
+    }
+
+    function moveToBottom() {
+        index--;
+        for (el = 0; el < Lslide.length; el++) {
+            Lslide[el].style.top = parseInt(Lslide[el].style.top) - slideHeight + "px";
+            Rslide[el].style.top = parseInt(Rslide[el].style.top) + slideHeight + "px";
+            
+        }
+        if (index < 0) {
+            index = Rslide.length-1;
+            for (el = 0; el < Lslide.length; el++) {
+                Lslide[el].style.top = parseInt(Lslide[el].style.top) + slideHeight * Lslide.length + "px";
+                Rslide[el].style.top = parseInt(Rslide[el].style.top) - slideHeight * Rslide.length + "px";
+            }
+        }
+    }
+
+    function transition() {
+        for (t = 0; t < Lslide.length; t++) {
+            Lslide[t].style.transition = "all 0.8s";
+            Rslide[t].style.transition = "all 0.8s";
+        }
+    }
+      
+
+    for (t = 0; t < control.length; t++) {
+        control[t].addEventListener("click", function() {
+
+            if (this.classList.contains('control-top')) {
+                moveToTop()
+            } 
+            if (this.classList.contains('control-bottom')) {
+                moveToBottom()
+            }
+
+            transition()
+       
+        });
+    }
+
+    var wheeling;
+    function mousemouve(e) {
+
+        clearTimeout(wheeling);
+        e.preventDefault();
+        var e = window.event || e; 
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        
+        wheeling = setTimeout(function() {
+            wheeling = undefined;
+            if (delta === 1) {
+                moveToTop()
+            }
+            if (delta === -1) {
+                moveToBottom()
+            }
+        }, 100);
+
+        transition()
+    }
+
+    document.addEventListener("mousewheel", mousemouve);
+    document.addEventListener("DOMMouseScroll", mousemouve);
+  </script>
+
+
+  
+ 
+  {% endblock content %}
+

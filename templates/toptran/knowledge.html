@@ -1,0 +1,121 @@
+{% extends 'toptran/base.html' %}
+
+{% load staticfiles %}
+
+
+
+
+
+{% block title %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/knowledge.css' %}">  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">  
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <!--返回顶部-->
+{% endblock %}    
+
+{% block content %}
+
+<div class="header">
+
+    <nav>
+        <ul>
+           <li><a href="{% url 'toptran:index' %}"><div><img src="{% static 'img/LOGO.png' %}"></div></a></li>
+           <li class="nav"><a href="{% url 'toptran:about' %}">关于我们</a></li>
+           <li class="nav"><a href="{% url 'toptran:product_list' %}">产品中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:case' %}">成功案例</a></li>
+           <li class="nav"><a href="{% url 'toptran:news' %}">新闻中心</a></li>
+           <li class="cont"><a href="{% url 'toptran:knowledge' %}">行业知识</a></li>
+           <li class="nav"><a href="{% url 'toptran:contact' %}">联系我们</a></li>
+        </ul>
+  </nav>
+  <div class="banner"></div>
+</div>
+
+
+<div class="news">
+            <div class="mbx_nav">
+                <p>行业知识
+                  <span>您当前位置：
+                      <a href="{% url 'toptran:index' %}">
+                        <i class="fa fa-home heading-icon" aria-hidden="true"></i></a> >
+                        <span>行业知识</span>
+                    </span>
+                </p>
+            </div>
+
+
+            {% for knowledge in knowledge_list %}
+            <div class="dc new_list ">
+
+
+                      <div class="nl_left">
+                          <p><a href="{{ knowledge.get_absolute_url }}"><img src="{% static 'img/news_logo.jpg' %}"></a></p>
+                      </div>
+                      <br>
+                       <br>
+                      <div class="nl_right">
+                          <p class="new_p1"><a href="{{ knowledge.get_absolute_url }}">{{ knowledge.title }}</a></p>
+
+                            <p style="font-size: 120%;">{{ knowledge.body|truncatechars:80 }}</</p>
+                            <p class="new_p2"><a href="{{ knowledge.get_absolute_url }}">查看详情>> </a></p>
+
+                      </div>
+
+
+
+
+            </div>
+            {% empty %}
+            <div>暂时还没有发布的文章！</div>
+
+            {% endfor %}
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% if is_paginated %}
+<div id="pgServer" class="page">
+  {% if first %}
+ 
+    <a href="?page=1">1</a>
+  {% endif %}
+  {% if left %}
+    {% if left_has_more %}
+        <span>...</span>
+    {% endif %}
+    {% for i in left %}
+        <a href="?page={{ i }}">{{ i }}</a>
+    {% endfor %}
+  {% endif %}
+  <a  href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
+  {% if right %}
+    {% for i in right %}
+        <a href="?page={{ i }}">{{ i }}</a>
+    {% endfor %}
+    {% if right_has_more %}
+        <span>...</span>
+    {% endif %}
+  {% endif %}
+  {% if last %}
+    <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
+  {% endif %}
+</div>
+{% endif %}
+<br>
+<br>
+<br>
+<br>
+<!-- 如果当前页还有上一页，显示一个上一页的按钮
+<div id="pgServer" class="page">
+<a class="prev" class="prev" disabled="disabled" style="margin-right:5px;"> < </a><span class="cur" style="margin-right:5px;">1</span><a href="/news/default.aspx?page=2" style="margin-right:5px;">2</a><a href="/news/default.aspx?page=3" style="margin-right:5px;">3</a><a href="/news/default.aspx?page=4" style="margin-right:5px;">4</a><a href="/news/default.aspx?page=5" style="margin-right:5px;">5</a><a href="/news/default.aspx?page=6" style="margin-right:5px;">6</a><a href="/news/default.aspx?page=7" style="margin-right:5px;">7</a><a href="/news/default.aspx?page=8" style="margin-right:5px;">8</a><a href="/news/default.aspx?page=9" style="margin-right:5px;">9</a><a href="/news/default.aspx?page=10" style="margin-right:5px;">10</a><a class="next" class="next" href="/news/default.aspx?page=2" style="margin-right:5px;"> > </a>
+</div>-->
+
+{% endblock %}
+

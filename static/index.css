@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+nav ul  {
+    height: 80px;
+	border-top:3px solid #1277BD;
+	background-color:#001B2E;
+    display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+    align-items: center;
+	list-style: none;
+	margin:0px;
+	padding: 0px 100px ;
+
+	}
+
+
+
+
+
+.nav a:link, .nav a:visited {
+	font-size: 16px;
+    color:white;
+	text-decoration: none;
+list-style: none;
+outline:none; 
+}
+
+li {
+	margin:0px 0px;
+	padding: 30px 10px 30px 10px;
+
+}
+li a:hover, li a:active {
+	font-size: 16px;
+	list-style: none;
+	text-decoration: none;
+	outline:none; 
+
+}
+
+li a:link, li a:visited {
+outline:none; }
+
+.nav:hover{
+	background-color:#1277BD;
+	text-decoration: none;
+	list-style: none;
+
+}
+
+
+
+
+
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+ 
+  
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.carousel img {
+  display: block;
+  height: 600px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#title {
+	border-bottom: 5px solid red;
+	margin-left: 10px;
+}
+
+.about {
+	
+	margin: 0px 150px 0px 120px;
+}
+.about h4 {
+	text-decoration-line: underline;
+	color:#1277BD;
+}
+
+.about p {
+	color:#1E1E1EFF;
+	font-size:90%;
+}
+
+.about a {
+	padding: 10px;
+	border:1px solid #1277BD;
+	color:#1277BD;
+    font-size: 80%;
+ list-style: none;
+	
+    background-color:#FFFFFFFF ;
+}
+
+.about a:hover{
+	
+	
+	color: #FFFFFFFF;
+	background-color: none;
+	list-style: none;
+	text-decoration-line: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Document 
+section {
+	background-color: #F6F7F8;
+	padding: 20px 0px 50px 0px;
+	margin:0px;
+}
+*/
+
+
+.carousel2 img {
+	border:3px solid white;
+}
+
+.product{
+
+	margin: 0px;
+	padding: 0px 120px 0px 120px;
+	background-color: #F6F7F8;
+}
+.product h2 {
+	border-bottom:3px solid #1277BD ;
+	color:#1277BD;
+}
+
+.product p {
+	color:#1E1E1EFF;
+	font-size:100%;
+}
+
+
+
+/* CSS Document section a {
+
+	padding: 10px 20px 10px 20px;
+	border:1px solid #1277BD;
+	color:#1277BD;
+    font-size: 110%;
+    margin: 20px 100px 20px 1020px;
+
+}
+
+section a:hover{
+	
+	
+	color: #FFFFFFFF;
+	background-color: #1277BD;
+	
+	
+}*/
+
+
+
+
+
+
+.case {
+
+	margin: 0 60% 0 8%;
+
+}
+
+.case h4 {
+	text-decoration-line: underline;
+	color:#1277BD;
+}
+
+.case p {
+	color:#1E1E1EFF;
+	font-size:90%;
+}
+
+.case a {
+	padding: 10px;
+	border:1px solid #1277BD;
+	color:#1277BD;
+    font-size: 80%;
+ 
+    background-color:#FFFFFFFF ;
+}
+
+.case a:hover{
+	
+	
+	color: #FFFFFFFF;
+	background-color: #1277BD;
+	
+	
+}
+
+
+
+
+
+/*footer*/
+
+.footer{ background:#001625; height:80px; overflow:hidden;}
+
+.foot{ 
+	width:1000px;
+	text-align: center;
+	color:#c5c4c4; font-size:14px;
+    margin:auto;}
+
+.foot p{ line-height:80px;}
+
+
+
+
+    
+
+
+
+
+
+
+
+
+.cd-top {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  bottom: px;
+  right: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .5s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+  color:white;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: 1;
+}
+.no-touch .cd-top:hover {
+  background-color: #1277BD;
+  opacity: 0.5;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 20px;
+  }
+}

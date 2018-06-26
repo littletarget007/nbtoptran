@@ -1,0 +1,116 @@
+{% extends 'toptran/base.html' %}
+
+{% load staticfiles %}
+
+
+
+
+
+{% block title %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">  
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <!--返回顶部-->
+{% endblock %}    
+
+
+{% block content %}
+
+<div class="header">
+
+    <nav>
+        <ul>
+           <li><a href="{% url 'toptran:index' %}"><div><img src="{% static 'img/LOGO.png' %}"></div></a></li>
+           <li class="nav"><a href="{% url 'toptran:about' %}">关于我们</a></li>
+           <li class="nav"><a href="{% url 'toptran:product_list' %}">产品中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:case' %}">成功案例</a></li>
+           <li class="cont"><a href="{% url 'toptran:news' %}">新闻中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:knowledge' %}">行业知识</a></li>
+           <li class="nav"><a href="{% url 'toptran:contact' %}">联系我们</a></li>
+        </ul>
+  </nav>
+  <div class="banner"></div>
+</div>
+
+
+<div class="news">
+            <div class="mbx_nav">
+                <p>新闻中心
+                  <span>您当前位置：
+                      <a href="/">
+                        <i class="fa fa-home heading-icon" aria-hidden="true"></i></a> >
+                        <span>新闻中心</span>
+                    </span>
+                </p>
+            </div>
+
+
+            {% for news in news_list %}
+            <div class="dc new_list ">
+
+
+                      <div class="nl_left">
+                          <p><a href="{{ news.get_absolute_url }}"><img src="{{ news.image.url }}" alt="" width="225" height="128"></a></p>
+                      </div>
+                      <div class="nl_right">
+                          <p class="new_p1"><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></p>
+                            <p class="new_date">发布日期：{{news.pub_date }}</p>
+                            <p class="new_p2"><a href="{{ news.get_absolute_url }}">查看详情>> </a></p>
+
+                      </div>
+
+
+
+
+            </div>
+            {% empty %}
+            <div>暂时还没有发布的文章！</div>
+
+            {% endfor %}
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% if is_paginated %}
+<div id="pgServer" class="page">
+  {% if first %}
+ 
+    <a href="?page=1">1</a>
+  {% endif %}
+  {% if left %}
+    {% if left_has_more %}
+        <span>...</span>
+    {% endif %}
+    {% for i in left %}
+        <a href="?page={{ i }}">{{ i }}</a>
+    {% endfor %}
+  {% endif %}
+  <a  href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
+  {% if right %}
+    {% for i in right %}
+        <a href="?page={{ i }}">{{ i }}</a>
+    {% endfor %}
+    {% if right_has_more %}
+        <span>...</span>
+    {% endif %}
+  {% endif %}
+  {% if last %}
+    <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
+  {% endif %}
+</div>
+{% endif %}
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock %}
+

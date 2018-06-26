@@ -1,0 +1,79 @@
+{% extends 'toptran/base.html' %}
+
+{% load staticfiles %}
+
+
+
+
+
+{% block title %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">  
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <!--返回顶部-->
+{% endblock %}    
+
+{% block content %}
+
+<div class="header">
+
+    <nav>
+        <ul>
+           <li><a href="{% url 'toptran:index' %}"><div><img src="{% static 'img/LOGO.png' %}"></div></a></li>
+           <li class="nav"><a href="{% url 'toptran:about' %}">关于我们</a></li>
+           <li class="nav"><a href="{% url 'toptran:product_list' %}">产品中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:case' %}">成功案例</a></li>
+           <li class="cont"><a href="{% url 'toptran:news' %}">新闻中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:knowledge' %}">行业知识</a></li>
+           <li class="nav"><a href="{% url 'toptran:contact' %}">联系我们</a></li>
+        </ul>
+  </nav>
+  <div class="banner"></div>
+</div>
+
+
+
+
+<div class="news">
+            <div class="mbx_nav">
+                <p>新闻中心
+                  <span>您当前位置：
+                      <a href="/">
+                        <i class="fa fa-home heading-icon" aria-hidden="true"></i></a> >
+                        <a href="{% url 'toptran:news' %}">新闻中心</a> >
+                        <span>新闻详情</span>
+                    </span>
+                </p>
+            </div>
+            <div class="new_all_1">
+             <div class="news_xx_tit">
+          <div class="xx_tit_left">
+              <p>{{ news.title }}</p>
+            </div>
+            <div class="xx_tit_right">
+              <a href="{% url 'toptran:news' %}">返回></a>
+            </div>
+        </div>
+
+        <p class="xx_day"> 日期:  {{news.pub_date }} 阅读 ( {{ news.views }} )</p>
+
+        <br>
+        <div style="font-size: 150%;margin:0px,20px;padding:0px,20px;">
+        <img src="{{ news.image.url }}" alt="" width="900" height="450">
+        <br>
+        <br>
+
+        {{news.body|safe }}
+
+
+
+
+        </div>
+        </div>
+</div>
+
+
+{% endblock %}
+

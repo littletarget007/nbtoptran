@@ -1,0 +1,155 @@
+{% extends 'toptran/base.html' %}
+
+{% load staticfiles %}
+
+
+
+
+
+{% block title %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">  
+  <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+ <!--返回顶部-->
+    
+
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="header">
+
+      <nav>
+        <ul>
+           <li><a href="{% url 'toptran:index' %}"><div><img src="{% static 'img/LOGO.png' %}"></div></a></li>
+           <li class="nav"><a href="{% url 'toptran:about' %}">关于我们</a></li>
+           <li class="cont"><a href="{% url 'toptran:product_list' %}">产品中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:case' %}">成功案例</a></li>
+           <li class="nav"><a href="{% url 'toptran:news' %}">新闻中心</a></li>
+           <li class="nav"><a href="{% url 'toptran:knowledge' %}">行业知识</a></li>
+           <li class="nav"><a href="{% url 'toptran:contact' %}">联系我们</a></li>
+        </ul>
+      </nav>
+
+    <div class="banner"></div>
+  </div>
+  
+
+
+
+
+<div class="n_main">
+  <div class="public_2">
+    <div class="nm_left">
+      <div class="bai">
+        <div class="left_tit">
+            <p class="nlp_1">产品中心</p>
+            <p class="nlp_2">PRODUCTS</p>
+        </div>
+            <div class="left_list_1">
+                <ul class="nav_yi_2">
+                    <li {% if not category %} class = "cont"{% endif %}> 
+                         <a href="{% url "toptran:product_list"%}">所有产品</a>
+                    </li>
+                   
+                    <li class = "cur">
+                         <a href="{{ c.get_absolute_url }}">{{ product.category }}</a>
+                    </li>
+                    
+                </ul>
+            </div>
+      </div>
+      <p><img src="{% static 'img/left_bj.png' %}" /></p>
+    </div>
+        <div class="nm_right">
+            <div class="mbx_nav">
+                <p>产品中心
+                    <span>您当前位置：    
+                      <a href="{% url 'toptran:index' %}">
+                        <i class="fa fa-home heading-icon" aria-hidden="true"></i></a> 
+                        <span> <i class="fa fa-angle-right heading-icon" aria-hidden="true"></i>{{ product.name }}</span>
+                         <span><i class="fa fa-angle-right heading-icon" aria-hidden="true"></i><a href="{% url 'toptran:product_list' %}"> {{ product.category }}</a></span>
+                        <span><i class="fa fa-angle-right heading-icon" aria-hidden="true"></i><a href="{% url 'toptran:product_list' %}">产品中心</a></span>
+                       
+                        
+                       
+                    </span>
+                </p>
+            </div>
+           
+            <div class="product_center">
+                
+                  <div class="right">
+                      <p class="new_p1">{{ product.description|safe }}</p>
+                  </div>
+            </div>
+            
+
+
+        </div>
+  </div>
+</div>
+
+ <!--返回顶部
+{% for contact in contacts %}
+    {# Each "contact" is a Contact model object. #}
+    {{ contact.full_name|upper }}<br />
+    ...
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if contacts.has_previous %}
+            <a href="?page={{ contacts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+-->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
