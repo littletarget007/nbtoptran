@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+import sys,io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "nbtoptran.settings")
     try:
