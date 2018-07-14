@@ -15,9 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-import sys,io
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -73,7 +71,7 @@ FILER_STORAGES = {
         'main': {
             'ENGINE': 'filer.storage.PublicFileSystemStorage',
             'OPTIONS': {
-                'location': '/home/toptran/sites/nbtoprran.com/nbtoptran/media/filer',
+                'location': '/var/www/nbtoptran/media/filer',
                 'base_url': '/media/filer/',
             },
             'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
@@ -82,7 +80,7 @@ FILER_STORAGES = {
         'thumbnails': {
             'ENGINE': 'filer.storage.PublicFileSystemStorage',
             'OPTIONS': {
-                'location': '/home/toptran/sites/nbtoprran.com/nbtoptran/media/filer_thumbnails',
+                'location': '/var/www/nbtoptran/media/filer_thumbnails',
                 'base_url': '/media/filer_thumbnails/',
             },
         },
@@ -91,7 +89,7 @@ FILER_STORAGES = {
         'main': {
             'ENGINE': 'filer.storage.PrivateFileSystemStorage',
             'OPTIONS': {
-                'location': '/home/toptran/sites/nbtoprran.com/nbtoptran/smedia/filer',
+                'location': '/var/www/nbtoptran/smedia/filer',
                 'base_url': '/smedia/filer/',
             },
             'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
@@ -100,7 +98,7 @@ FILER_STORAGES = {
         'thumbnails': {
             'ENGINE': 'filer.storage.PrivateFileSystemStorage',
             'OPTIONS': {
-                'location': '/home/toptran/sites/nbtoprran.com/smedia/filer_thumbnails',
+                'location': '/var/www/nbtoptran/smedia/filer_thumbnails',
                 'base_url': '/smedia/filer_thumbnails/',
             },
         },
@@ -186,11 +184,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/filer/'
-MEDIA_ROOT = '/home/toptran/sites/nbtoprran.com/nbtoptran/media/filer'
+MEDIA_ROOT = '/var/www/nbtoptran/media/filer'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'media/filer'),
 ]
 
-STATIC_ROOT = '/home/toptran/sites/nbtoprran.com/nbtoptran/static'
+STATIC_ROOT = '/var/www/nbtoptran/staticfiles'
 CKEDITOR_UPLOAD_PATH = 'filer_public'
