@@ -71,7 +71,7 @@ FILER_STORAGES = {
         'main': {
             'ENGINE': 'filer.storage.PublicFileSystemStorage',
             'OPTIONS': {
-                'location': '/var/www/nbtoptran/media/filer',
+                'location': '/root/sites/nbtoptran.com/nbtoptran/media/filer',
                 'base_url': '/media/filer/',
             },
             'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
@@ -80,7 +80,7 @@ FILER_STORAGES = {
         'thumbnails': {
             'ENGINE': 'filer.storage.PublicFileSystemStorage',
             'OPTIONS': {
-                'location': '/var/www/nbtoptran/media/filer_thumbnails',
+                'location': '/root/sites/nbtoptran.com/nbtoptran/media/filer_thumbnails',
                 'base_url': '/media/filer_thumbnails/',
             },
         },
@@ -89,7 +89,7 @@ FILER_STORAGES = {
         'main': {
             'ENGINE': 'filer.storage.PrivateFileSystemStorage',
             'OPTIONS': {
-                'location': '/var/www/nbtoptran/smedia/filer',
+                'location': '/root/sites/nbtoptran.com/nbtoptran/smedia/filer',
                 'base_url': '/smedia/filer/',
             },
             'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
@@ -98,7 +98,7 @@ FILER_STORAGES = {
         'thumbnails': {
             'ENGINE': 'filer.storage.PrivateFileSystemStorage',
             'OPTIONS': {
-                'location': '/var/www/nbtoptran/smedia/filer_thumbnails',
+                'location': '/root/sites/nbtoptran.com/nbtoptran/smedia/filer_thumbnails',
                 'base_url': '/smedia/filer_thumbnails/',
             },
         },
@@ -184,11 +184,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/filer/'
-MEDIA_ROOT = '/var/www/nbtoptran/media/filer'
+MEDIA_ROOT = '/root/sites/nbtoptran.com/nbtoptran/media/filer'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'media/filer'),
 ]
 
-STATIC_ROOT = '/var/www/nbtoptran/staticfiles'
+STATIC_ROOT = '/root/sites/nbtoptran.com/nbtoptran/staticfiles'
 CKEDITOR_UPLOAD_PATH = 'filer_public'
